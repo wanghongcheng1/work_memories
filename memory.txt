@@ -1,0 +1,108 @@
+首先我们通过这个下载brew
+https://github.com/Homebrew/install
+
+https://github.com/Homebrew/install
+
+这个页面去复制：
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+然后下载好了后再去配置一下两个指令
+(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/whc/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
+
+
+项目下载走下面这个，而不是通用的
+
+npm install --legacy-peer-deps --registry=https://registry.npmjs.org
+
+
+Warp这个类似梯子的软件打开，才能git clone  操作
+
+
+项目的用户名
+ID:pwtk
+PW:Test@123456
+验证码：123456
+
+
+7.23先做站点管理. Tesk of mine
+siteManagement
+
+
+参考代码
+path: 'userList', //用户列表
+        name: 'userList',
+        component: () => import('@/views/User/userList/index.vue'
+
+
+
+
+
+
+
+<el-form :model="addForm" ref="formRef" :rules="rulesAddFrom" style="width: 600px; margin: 0 auto"
+        label-width="130">
+        <el-form-item label="站点ID：" prop="websiteId" v-if="distinguish">
+          <p>
+            {{ addForm.websiteId }}
+            <copy :content="addForm.websiteId" />
+          </p>
+        </el-form-item>
+        <el-form-item label="用户ID：" prop="ownerUserId">
+          <RemoteInput placeholder="请输入用户ID" name="userId" v-model:remoteId="addForm.ownerUserId"></RemoteInput>
+        </el-form-item>
+        <el-form-item label="站点内部名称：" prop="websiteInnerName">
+          <el-input v-model="addForm.websiteInnerName" placeholder="请输入站点内部名称" maxlength="128" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="引用模版ID：" prop="websiteTemplateRef">
+          <el-select v-model="addForm.websiteTemplateRef" filterable remote reserve-keyword placeholder="请输入引用模版ID"
+            :placeholder="addForm.websiteTemplateRef" clearable :remote-method="remoTetemplateIdChange">
+            <el-option v-for="(item, index) in remoteTemplateOptions" :key="index"
+              :label="item.templateName + ' - ' + item.templateId" :value="item.templateId" />
+          </el-select>
+          <!-- <el-input v-model="addForm.websiteTemplateRef" placeholder="请输入引用模版ID" maxlength="32" autocomplete="off" /> -->
+        </el-form-item>
+        <el-form-item label="网站标题：" prop="websiteTitle">
+          <el-input v-model="addForm.websiteTitle" placeholder="请输入网站标题" maxlength="128" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="站点描述：" prop="describe">
+          <el-input type="textarea" show-word-limit placeholder="请输入站点描述" :rows="2" v-model="addForm.describe"
+            maxlength="255" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="网站状态：" prop="websiteStatus">
+          <el-radio-group v-model="addForm.websiteStatus">
+            <el-radio value="y">启用</el-radio>
+            <el-radio value="m">维护</el-radio>
+            <el-radio value="c" v-if="distinguish">关闭</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="关键字：" prop="keyWords">
+          <el-input v-model="addForm.keyWords" placeholder="请输入关键字" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="统计代码：" prop="hasStatsCode">
+          <el-radio-group v-model="addForm.websiteStatus">
+            <el-radio value="y">启用</el-radio>
+            <el-radio value="m">不启用</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        <el-form-item label="语言列表：" prop="langCodes">
+          <el-select v-model="addForm.langCodes" multiple placeholder="请选择语言">
+            <el-option v-for="item in optionsLang" :key="item.value" :label="item.label" :value="item.value" />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="地区列表：" prop="areaCodes">
+          <el-select v-model="addForm.areaCodes" multiple placeholder="请选择地区">
+            <el-option v-for="item in optionsArea" :key="item.value" :label="item.label" :value="item.value" />
+          </el-select>
+        </el-form-item>
+        <el-form-item label="在线客服代码：" prop="onlineServiceCode">
+          <el-input type="textarea" show-word-limit placeholder="请输入在线客服代码" :rows="2"
+            v-model="addForm.onlineServiceCode" maxlength="255" autocomplete="off" />
+        </el-form-item>
+        <el-form-item label="备注：" prop="memo">
+          <el-input type="textarea" show-word-limit placeholder="请输入上级备注" :rows="2" v-model="addForm.memo"
+            maxlength="255" autocomplete="off" />
+        </el-form-item>
+      </el-form>
